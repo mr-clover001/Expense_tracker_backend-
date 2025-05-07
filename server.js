@@ -20,7 +20,9 @@ app.use(
 app.use(express.json());
 
 connectDB();
-
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/income", incomeRoute);
 app.use("/api/v1/expense", expenseRoute);
